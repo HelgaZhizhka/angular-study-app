@@ -15,11 +15,15 @@ export class FilmCardComponent implements OnInit {
 
     this.filmName = "Matrix"
     this.getFilms();
+
   }
 
   private getFilms(){
     if(!this.filmName) {return;}
     this.filmCardService.getFilms(this.filmName).subscribe(data => {
+      if(!data.length) {
+        console.log('No film');
+      }
       this.filmList = data;
     })
   }
