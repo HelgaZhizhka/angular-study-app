@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'Film app';
-  messageError: string = 'Такого фильма нет';
   subtitle: string = "This is my first angular2 app";
   number: number = 1
 }
