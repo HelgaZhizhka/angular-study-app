@@ -5,8 +5,8 @@
 /tmp
 /out-tsc
 /homework_5
-/homework_8/node_modules
-/homework_9
+/homework_8
+/homework_9/node_modules
 # dependencies
 /node_modules
 
