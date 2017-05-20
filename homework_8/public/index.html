@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>JS/Expert Example</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="http://www.jsexpert.net/">JS/Expert</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+
+				<ul class="nav navbar-nav hidden-sm hidden-md">
+					<li class="active"><a href="#">Задание к уроку №8</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+
+	<div class="site-wrapper">
+		<div class="container">
+			<div class="input-group">
+				<input name="filmName" id="searchInput"  class="form-control"  type="text"  placeholder="Что искать?">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default" id="searchButton">Искать</button>
+				</div>
+			</div>
+			<div class="row content" id="galleryFilm">
+				<h2 class="empty-msg"></h2>
+			</div>
+		</div>
+	</div><!-- /.site-wrapper -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="js/model.js"></script>
+	<script src="js/view.js"></script>
+	<script src="js/controller.js"></script>
+</body>
+</html>
