@@ -4,16 +4,17 @@
 	var model = function() {
 	
 		var url = "http://www.omdbapi.com/?page=1&s=",
+				apiKey = "&apikey=520bbe17",
 				defaultFilmName = 'Matrix';
 			
 		function getData() {
-			return $.get( url + defaultFilmName, function( data ) {
+			return $.get( url + defaultFilmName + apiKey, function( data ) {
 				return data;
 			})
 		}
 		
 		function searchData(film) {
-			return $.get( url + film, function( data ) {
+			return $.get( url + film + apiKey, function( data ) {
 				return data;
 			})
 		}

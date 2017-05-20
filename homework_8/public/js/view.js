@@ -3,7 +3,8 @@
 	
 	function Gallery (items) {
 		this.DOMElements = {
-			searchInput     : document.querySelector("#searchInput"),
+			searchInput   : document.querySelector("#searchInput"),
+			searchButton	: document.querySelector("#searchButton"),
 			galleryContainer  : document.querySelector("#galleryFilm"),
 			emptyMsgContainer : document.querySelector(".empty-msg")
 		};
@@ -28,7 +29,7 @@
 		},
 		
 		initListeners : function () {
-			this.DOMElements.searchInput.addEventListener("change", () => {
+			this.DOMElements.searchButton.addEventListener("click", () => {
 				this.eventHolder.trigger( this.searchEventName , [{searchValue: this.searchElement()}]);
 			});
 		},
@@ -52,14 +53,14 @@
 			this.DOMElements.galleryContainer.innerHTML = '';
 			
 			if(films.length) {
-				resultHtml = films.Search.reduce(function(amount, item){
-					return amount + `<div class="col-sm-6">\
-														<div class="thumbnail">\
-															<img src="$(item.Poster)" class="img-thumbnail">\
-															<p class="title">$(item.Title)</p>\
-															<p class="subtitle">$(item.Year)</p>\
-															<button class="btn btn-default">Узнать больше</button>\
-														</div>\
+				resultHtml = films.reduce(function(common, item){
+					return common + `<div class="col-sm-6">\
+															<div class="thumbnail">\
+																<img src="${item.Poster}" class="img-thumbnail">\
+																<p class="title">${item.Title}</p>\
+																<p class="subtitle">${item.Year}</p>\
+																<button class="btn btn-default">Узнать больше</button>\
+															</div>\
 													</div>
 									`;
 					
