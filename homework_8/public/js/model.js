@@ -5,7 +5,7 @@
 	
 		var url = "http://www.omdbapi.com/?page=1&s=",
 				apiKey = "&apikey=520bbe17",
-				defaultFilmName = 'Matrix';
+				defaultFilmName = 'lord';
 			
 		function getData() {
 			return $.get( url + defaultFilmName + apiKey, function( data ) {
@@ -15,6 +15,7 @@
 		
 		function searchData(film) {
 			return $.get( url + film + apiKey, function( data ) {
+				console.log(data);
 				return data;
 			})
 		}

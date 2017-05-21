@@ -14,6 +14,7 @@
 	function bindSearch() {
 		gallery.eventHolder.on( gallery.searchEventName, (event, searchValue) => {
 			model.searchData(searchValue).then(films => {
+				console.log(films);
 				gallery.refreshGallery(films);
 			});
 		});

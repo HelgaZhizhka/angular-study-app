@@ -10,7 +10,7 @@
 		};
 		this.items = items;
 		this.searchValue = '';
-		
+	
 		this.eventHolder = $({});
 		this.updateEventName = "update";
 		this.searchEventName = "search";
@@ -25,7 +25,13 @@
 		},
 		
 		buildGallery : function () {
-			this.renderGallery();
+			let films = this.items.Search || [];
+			this.DOMElements.galleryContainer.innerHTML = '';
+			
+			if(!films.length) {
+				this.showEmptyMsg();
+			}
+			this.DOMElements.galleryContainer.innerHTML = this.buildHtmlTemplate(films).join('');
 		},
 		
 		initListeners : function () {
@@ -47,29 +53,19 @@
 			this.buildGallery();
 		},
 		
-		renderGallery: function () {
-			let resultHtml,
-					films = this.items.Search || [];
-			this.DOMElements.galleryContainer.innerHTML = '';
-			
-			if(films.length) {
-				resultHtml = films.reduce(function(common, item){
-					return common + `<div class="col-sm-6">\
-															<div class="thumbnail">\
-																<img src="${item.Poster}" class="img-thumbnail">\
-																<p class="title">${item.Title}</p>\
-																<p class="subtitle">${item.Year}</p>\
-																<button class="btn btn-default">Узнать больше</button>\
-															</div>\
-													</div>
-									`;
-					
-				});
-			} else {
-				this.showEmptyMsg();
-			}
-			this.DOMElements.galleryContainer.innerHTML = resultHtml;
+		buildHtmlTemplate : function (arr) {
+			return arr.map(function(item){
+					return `<div class="col-sm-6">
+											<div class="thumbnail">
+												<img src="${item.Poster}" class="img-thumbnail">
+												<p class="title">${item.Title}</p>
+												<p class="subtitle">${item.Year}</p>
+												<button class="btn btn-default">Узнать больше</button>
+											</div>
+									</div>`
+			});
 		}
+		
 	}
 	
 	window.app = window.app || {};
