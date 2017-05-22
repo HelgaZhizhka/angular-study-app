@@ -1,0 +1,8 @@
+<h2 *ngIf="filmList.length === 0">Фильм не найден</h2>
+<md-grid-list cols="2" rowHeight="1000px">
+  	<md-grid-tile *ngFor="let film of filmList">
+		<film-card [filmId]="film.imdbID"></film-card>
+	</md-grid-tile>
+
+</md-grid-list>
+
