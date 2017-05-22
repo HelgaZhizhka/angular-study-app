@@ -7,7 +7,8 @@
 
 # dependencies
 /node_modules
-/homework_9
+/homework9
+/homework_8
 # IDEs and editors
 /.idea
 .project
