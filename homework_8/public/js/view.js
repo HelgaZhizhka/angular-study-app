@@ -36,7 +36,7 @@
 		
 		initListeners : function () {
 			this.DOMElements.searchButton.addEventListener("click", () => {
-				this.eventHolder.trigger( this.searchEventName , [{searchValue: this.searchElement()}]);
+				this.eventHolder.trigger( this.searchEventName , [this.searchElement()]);
 			});
 		},
 		
@@ -45,7 +45,7 @@
 		},
 		
 		showEmptyMsg: function () {
-			this.emptyMsgContainer.innerText = "Ничего не найдено";
+			this.DOMElements.emptyMsgContainer.innerText = "Ничего не найдено";
 		},
 		
 		refreshGallery: function (items) {
