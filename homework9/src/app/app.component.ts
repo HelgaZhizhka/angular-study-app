@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string = 'Каталог фильмов JSExpert';
+  title: string = 'Каталог фильмов';
 
   links = [
     { path: '/dashboard', icon: 'home', label: 'Главная'},

@@ -1,31 +1,38 @@
 import { Injectable } from '@angular/core';
-import {Http, Response} from '@angular/http';
-import { Observable } from 'rxjs/Observable'
+import {Http, Response, URLSearchParams} from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class FilmService {
-  searchUrl: string = "http://www.omdbapi.com/?page=1&s=";
-  filmUrl: string = "http://www.omdbapi.com/?i=";
-  apiKey: string = "&apikey=520bbe17";
+  searchUrl: string = "http://www.omdbapi.com/";
+  apiKey: string = '520bbe17';
   
   constructor(private http: Http) { }
 
   private extractListData(res: Response) {
     let body = res.json();
-    return body.Search || [];
+    return body.Search || {};
   }
 
   private extractItemData(res: Response) {
     let body = res.json();
-    return body || [];
+    return body || {};
   }
 
-  getFilms (filmName: string) {
-    return this.http.get(this.searchUrl + filmName + this.apiKey).map(this.extractListData);
+  getFilms (filmName: string, pageNumber: string) {
+    let params: URLSearchParams = new URLSearchParams();
+    params.set('apikey', this.apiKey);
+    params.set('page', pageNumber || '1');
+    params.set('s', filmName);
+    return this.http.get(this.searchUrl, {search: params}).map(this.extractListData);
   }
 
   getFilmById (filmId: string) {
-    return this.http.get(this.filmUrl + filmId + this.apiKey).map(this.extractItemData);
+    let params: URLSearchParams = new URLSearchParams();
+    params.set('i', filmId);
+    params.set('apikey', this.apiKey);
+    return this.http.get(this.searchUrl, {search: params}).map(this.extractItemData);
   }
 
 }

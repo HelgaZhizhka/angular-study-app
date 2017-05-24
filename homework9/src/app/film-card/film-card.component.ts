@@ -8,14 +8,14 @@ import {FilmService} from '../film.service'
 })
 export class FilmCardComponent implements OnInit {
   @Input()
-  filmId: string; 
-  filmItem: {} = {};
+  filmId: string;
+  filmItem: Object[] = [];
   constructor(private filmCardService: FilmService) { }
 
   ngOnInit() {
     if(!this.filmId) {return;}
-    this.filmCardService.getFilmById(this.filmId).subscribe(data => {
-      this.filmItem = data;
+    this.filmCardService.getFilmById(this.filmId).subscribe(films => {
+      this.filmItem = films;
     })
   }
 
