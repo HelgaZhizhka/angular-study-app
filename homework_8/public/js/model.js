@@ -3,20 +3,18 @@
 	
 	var model = function() {
 	
-		var url = "http://www.omdbapi.com/?page=1&s=",
-				apiKey = "&apikey=520bbe17",
+		var url = "http://www.omdbapi.com/?apikey=520bbe17&page=1&s=",
 				defaultFilmName = 'lord';
 			
 		function getData() {
-			return $.get( url + defaultFilmName + apiKey, function( data ) {
-				return data;
+			return $.get( url + defaultFilmName, function( films ) {
+				return films;
 			})
 		}
 		
 		function searchData(film) {
-			return $.get( url + film + apiKey, function( data ) {
-				console.log(data);
-				return data;
+			return $.get( url + film, function( films ) {
+				return films;
 			})
 		}
 		
