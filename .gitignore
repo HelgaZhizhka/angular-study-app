@@ -6,7 +6,9 @@
 /out-tsc
 /homework_5
 /homework_8
-/homework_9
+/homework9/node_modules
+
+
 # dependencies
 /node_modules
 
