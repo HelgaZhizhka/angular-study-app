@@ -1,0 +1,6 @@
+<md-select placeholder="Вид карточек" [(ngModel)]="cardViews">
+  <md-option *ngFor="let cardView of cardViews" [value]="cardView.value">
+    {{ cardView.value }}
+  </md-option>
+</md-select>
+

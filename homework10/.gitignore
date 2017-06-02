@@ -4,10 +4,6 @@
 /dist
 /tmp
 /out-tsc
-/homework_5
-/homework_8
-/homework9
-/homework10/node_modules
 
 # dependencies
 /node_modules
