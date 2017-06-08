@@ -1,4 +1,3 @@
 <md-input-container>
-  <input mdInput placeholder="Что ищем?" [(ngModel)]="searchValue">
+  <input mdInput placeholder="Что ищем?" name="filmName" [(ngModel)]="searchValue" (keyup.enter)="getNewFilms(); searchValue=''">
 </md-input-container>
-<!--<button md-button (click)="searchFilm()" )>Найти</button>-->

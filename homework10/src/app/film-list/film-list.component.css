@@ -2,3 +2,7 @@
    margin: 50px auto; 
    max-width: 884px;
 }
+.spinner {
+   width: 30px;
+   height: 30px;
+}

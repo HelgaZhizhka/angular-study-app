@@ -1,6 +1,5 @@
-<md-select placeholder="Вид карточек" [(ngModel)]="cardViews">
-  <md-option *ngFor="let cardView of cardViews" [value]="cardView.value">
-    {{ cardView.value }}
-  </md-option>
+<md-select class="mat-select"  placeholder="Вид" name="cardView"  [(ngModel)]="cardsView" (change)="selectNewCardView()">
+  <md-option [value]="1">Вертикально</md-option>
+  <md-option [value]="2">Горизонтально</md-option>
 </md-select>
 

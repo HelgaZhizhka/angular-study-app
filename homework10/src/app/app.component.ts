@@ -16,8 +16,8 @@ export class AppComponent {
     { path: '/profile', icon: 'account_box', label: 'Профиль'}
   ];
 
-  searchFilm(filmame) {
+  // searchFilm(filmame) {
     // this.srcFilmValue = filmame;
-  }
+  // }
 
 }

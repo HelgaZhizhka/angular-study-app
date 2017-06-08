@@ -1,34 +1,18 @@
-import {Component, OnInit, Input, Output, OnChanges, SimpleChanges, EventEmitter} from '@angular/core';
+import {Component, Output, EventEmitter} from '@angular/core';
 
 @Component({
-  selector: 'app-search',
+  selector: 'search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit, OnChanges  {
-  @Input()
+export class SearchComponent {
   searchValue: string = '';
-
-  // @Output()
-  // searchEvent = new EventEmitter();
+  @Output()
+  getFilms = new EventEmitter<string>();
 
   constructor() { }
 
-  ngOnInit() {
+  getNewFilms(): void {
+    this.getFilms.emit(this.searchValue);
   }
-
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('проперти поменялись');
-    for (let property in changes) {
-      if (property === 'searchValue') {
-        console.log('Previous:', changes[property].previousValue);
-        console.log('Current:', changes[property].currentValue);
-      }
-    }
-  }
-
-  // searchFilm(filmName) {
-  //   this.searchEvent.emit(this.searchValue);
-  // }
 }
