@@ -1,0 +1,9 @@
+<search (getFilms)="addFilms($event)"></search>
+<card-view (selectCardView)="selectCardView($event)"></card-view>
+<md-grid-list cols="2" [rowHeight]="rowHeightRequired"  (load)="loading = true;">
+  	<md-grid-tile *ngFor="let film of filmList">
+		<film-card [filmId]="film.imdbID" [cardView]="cardViewRequired"></film-card>
+	</md-grid-tile>
+</md-grid-list>
+<md-spinner class="spinner" *ngIf="loading"></md-spinner>
+<button class="btnAdd" md-button (click)="addMoreFilms()" [style.display]="loading ? 'none' : 'block'">Больше фильмов</button>

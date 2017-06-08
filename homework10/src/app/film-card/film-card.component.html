@@ -1,0 +1,32 @@
+
+<md-card class="film-card card-horizontal"  *ngIf="cardView === 1">
+	<img md-card-image src="{{filmItem.Poster}}">
+	<md-card-content>
+		<md-card-title>{{filmItem.Title}}</md-card-title>
+		<p>Релиз: {{filmItem.Released}}</p>
+		<p>{{filmItem.Plot}}</p>
+		<p>Жанр: {{filmItem.Genre}}</p>
+		<p>Страна: {{filmItem.Country}}</p>
+		<p>Автор: {{filmItem.Writer}}</p>
+		<p>Директор: {{filmItem.Director}}</p>
+	</md-card-content>
+	<md-card-actions>
+		<button md-button>Подробнее</button>
+	</md-card-actions>
+</md-card>
+
+<div class="film-card card-vertical" *ngIf="cardView === 2">
+	<img class="img-view2" md-card-image src="{{filmItem.Poster}}">
+	<div class="film-content-view2">
+		<h2>{{filmItem.Title}}</h2>
+		<p>Релиз: {{filmItem.Released}}</p>
+		<p>{{filmItem.Plot}}</p>
+		<p>Жанр: {{filmItem.Genre}}</p>
+		<p>Страна: {{filmItem.Country}}</p>
+		<p>Автор: {{filmItem.Writer}}</p>
+		<p>Директор:  {{filmItem.Director}}/10</p>
+		<md-card-actions>
+			<button md-button>Подробнее</button>
+		</md-card-actions>
+	</div>
+</div>
