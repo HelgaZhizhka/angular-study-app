@@ -32,10 +32,9 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:scroll')
   public onScrollPage() {
-    console.log(window.pageYOffset);
-    let number = this.window.document.body.querySelector('.container').scrollTop;
-    console.log(number);
-    if (number > 100) {
+    let number = this.window.pageYOffset;
+    console.log("nuaber" + number);
+    if (number > 300) {
       this.showBtn = true;
     } else if (this.showBtn && number < 10) {
       this.showBtn = false;
@@ -49,8 +48,6 @@ export class AppComponent implements OnInit {
     this.filmListComponent.selectCardView(number);
   }
   goTop() {
-    this.window.document.documentElement.style.height = "auto";
     this.window.document.body.scrollTop = 0;
-    this.window.document.documentElement.removeAttribute("style");
   }
 }

@@ -1,3 +1,11 @@
-<md-input-container>
-  <input mdInput placeholder="Что ищем?" name="filmName" [(ngModel)]="searchValue" (keyup.enter)="getNewFilms(); searchValue=''">
-</md-input-container>
+<form>
+  <md-input-container>
+    <input mdInput placeholder="Что ищем?" [mdAutocomplete]="auto"  [formControl]="control" name="searchValue" [(ngModel)]="searchValue" (keyup.enter)="getNewFilms(); searchValue=''">
+  </md-input-container>
+  <md-autocomplete #auto="mdAutocomplete">
+    <md-option  *ngFor="let film of filterFilmsName | async" [value]="film">
+      {{ film }}
+    </md-option>
+  </md-autocomplete>
+</form>
+
