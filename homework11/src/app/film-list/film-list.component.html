@@ -1,0 +1,11 @@
+<div class="container">
+	<h2 *ngIf="!filmList.length">Ничего не найдено</h2>
+	<div class="filmList" fxLayout="row wrap"
+		 fxLayoutAlign="space-between stretch" (load)="loading = true;">
+		<div class="col col-50" [fxFlex]="flexWidth" *ngFor="let film of filmList">
+			<film-card [filmId]="film.imdbID" [cardView]="cardViewRequired"></film-card>
+		</div>
+	</div>
+	<md-spinner class="spinner" *ngIf="loading"></md-spinner>
+	<button class="btnMore" md-button (click)="addMoreFilms()" [style.display]="loading ? 'none' : 'block'">Больше фильмов</button>
+</div>
