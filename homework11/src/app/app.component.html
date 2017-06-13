@@ -28,9 +28,9 @@
       <search (getFilms)="addFilms($event)"></search>
       <card-view (selectCardView)="selectCardView($event)"></card-view>
     </div>
-    <film-list (scroll)="onScrollPage($event)"></film-list>
+    <film-list></film-list>
   </div>
 </md-sidenav-container>
-<button [ngClass]="('goTop ' + (showBtn ? 'show' : ''))" md-mini-fab [title]="'Наверх'" md-button (click)="goTop()"><md-icon>arrow_upward</md-icon></button>
+<button class="goTop" [ngClass]="{show: showBtn}" md-mini-fab [title]="'Наверх'" md-button (click)="goTop()"><md-icon>arrow_upward</md-icon></button>
 
 

@@ -12,12 +12,12 @@ export class FilmService {
 
   private extractListData(res: Response) {
     let body = res.json();
-    return body.Search || {};
+    return body.Search || [];
   }
 
   private extractItemData(res: Response) {
     let body = res.json();
-    return body || {};
+    return body || [];
   }
 
   getFilms (filmName: string, pageNumber: string) {
